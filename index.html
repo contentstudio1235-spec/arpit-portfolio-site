@@ -200,18 +200,18 @@
     height: 360px;
     z-index: 2;
 }
-        .open-status-badge {
+     .open-status-badge {
     position: absolute;
     top: 14px;
     left: 14px;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 14px;
+    gap: 6px;                 /* tighter spacing */
+    padding: 5px 10px;        /* smaller badge */
     background: rgba(10, 15, 12, 0.9);
     border: 1px solid var(--primary);
     border-radius: 999px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;        /* smaller text */
     font-weight: 500;
     color: var(--primary);
     backdrop-filter: blur(8px);
@@ -219,8 +219,8 @@
 }
 
 .open-status-badge .status-dot {
-    width: 8px;
-    height: 8px;
+    width: 6px;               /* smaller dot */
+    height: 6px;
     background: var(--primary);
     border-radius: 50%;
     animation: blink 1.8s ease-in-out infinite;
@@ -1321,6 +1321,7 @@
     </script>
 </body>
 </html>
+
 
 
 
