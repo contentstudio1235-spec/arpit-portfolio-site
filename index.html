@@ -108,13 +108,16 @@
             100% { transform: translateX(-50%); }
         }
 
-        .ticker-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0 2rem;
-            white-space: nowrap;
-            font-size: 0.85rem;
+        .ticker-item.badge {
+    padding: 0.6rem 1.4rem;
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid var(--primary);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--primary);
+    text-transform: uppercase;
         }
 
         .ticker-symbol {
@@ -767,25 +770,28 @@
     <div class="bg-grid"></div>
     <div class="network-visual" id="networkVisual"></div>
 
-    <!-- Crypto Ticker -->
-    <div class="crypto-ticker">
-        <div class="ticker-wrapper" id="cryptoTicker">
-            <div class="ticker-item"><span class="ticker-symbol">BTC</span><span class="ticker-price">$98,234</span></div>
-            <div class="ticker-item"><span class="ticker-symbol">ETH</span><span class="ticker-price">$3,876</span></div>
-            <div class="ticker-item"><span class="ticker-symbol">SOL</span><span class="ticker-price">$198.45</span></div>
-            <div class="ticker-item"><span class="ticker-symbol">AVAX</span><span class="ticker-price">$42.12</span></div>
-            <div class="ticker-item"><span class="ticker-symbol">MATIC</span><span class="ticker-price">$1.87</span></div>
-            <div class="ticker-item"><span class="ticker-symbol">ARB</span><span class="ticker-price">$2.23</span></div>
-            <div class="ticker-item"><span class="ticker-symbol">OP</span><span class="ticker-price">$3.45</span></div>
-            <div class="ticker-item"><span class="ticker-symbol">BTC</span><span class="ticker-price">$98,234</span></div>
-            <div class="ticker-item"><span class="ticker-symbol">ETH</span><span class="ticker-price">$3,876</span></div>
-            <div class="ticker-item"><span class="ticker-symbol">SOL</span><span class="ticker-price">$198.45</span></div>
-            <div class="ticker-item"><span class="ticker-symbol">AVAX</span><span class="ticker-price">$42.12</span></div>
-            <div class="ticker-item"><span class="ticker-symbol">MATIC</span><span class="ticker-price">$1.87</span></div>
-            <div class="ticker-item"><span class="ticker-symbol">ARB</span><span class="ticker-price">$2.23</span></div>
-            <div class="ticker-item"><span class="ticker-symbol">OP</span><span class="ticker-price">$3.45</span></div>
-        </div>
+    <!-- Expertise Ticker -->
+<div class="crypto-ticker">
+    <div class="ticker-wrapper">
+        <div class="ticker-item badge">DeFi</div>
+        <div class="ticker-item badge">Layer 2</div>
+        <div class="ticker-item badge">Payments</div>
+        <div class="ticker-item badge">Web3</div>
+        <div class="ticker-item badge">Cross-Chain</div>
+        <div class="ticker-item badge">Fintech</div>
+        <div class="ticker-item badge">Infrastructure</div>
+
+        <!-- duplicate for seamless infinite scroll -->
+        <div class="ticker-item badge">DeFi</div>
+        <div class="ticker-item badge">Layer 2</div>
+        <div class="ticker-item badge">Payments</div>
+        <div class="ticker-item badge">Web3</div>
+        <div class="ticker-item badge">Cross-Chain</div>
+        <div class="ticker-item badge">Fintech</div>
+        <div class="ticker-item badge">Infrastructure</div>
     </div>
+</div>
+
 
     <header>
         <div class="container">
@@ -838,7 +844,7 @@
                     <div class="profile-container">
                         <div class="profile-glow"></div>
                         <div class="profile-img">
-                           <img src="arpit.jpeg" alt="Arpit Singh Rajput"> onload="this.style.display='block'" onerror="this.style.display='none'">
+                            <img src="../uploads/WhatsApp_Image_2026-01-01_at_3_43_59_PM.jpeg" alt="Arpit Singh Rajput" onload="this.style.display='block'" onerror="this.style.display='none'">
                         </div>
                         <div class="crypto-badges">
                             <div class="crypto-badge">
@@ -1219,17 +1225,6 @@
                 }
             });
         });
-
-        // Update crypto ticker with random price changes
-        setInterval(() => {
-            const priceElements = document.querySelectorAll('.ticker-price');
-            priceElements.forEach(el => {
-                const currentPrice = parseFloat(el.textContent.replace('$', '').replace(',', ''));
-                const change = (Math.random() - 0.5) * (currentPrice * 0.02);
-                const newPrice = currentPrice + change;
-                el.textContent = '$' + newPrice.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-            });
-        }, 3000);
     </script>
 </body>
 </html>
