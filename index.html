@@ -39,8 +39,94 @@
     background: var(--primary);
     z-index: 999;
 }
+        /* Career Timeline Pulse */
+#career-timeline {
+    padding: 3rem 0 5rem;
+}
 
-       body {
+.timeline-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    gap: 1rem;
+}
+
+.timeline-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(0, 255, 136, 0.15);
+    transform: translateY(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    background: var(--darker);
+    padding: 0 1rem;
+    text-align: center;
+    z-index: 1;
+}
+
+.timeline-year {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--primary);
+    border-radius: 50%;
+    margin: 0 auto 0.6rem;
+    box-shadow: 0 0 0 rgba(0,255,136,0.6);
+    animation: pulseDot 2.5s infinite;
+}
+
+.timeline-text {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    white-space: nowrap;
+}
+
+.timeline-item.active .timeline-year,
+.timeline-item.active .timeline-text {
+    color: var(--primary);
+}
+
+@keyframes pulseDot {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0,255,136,0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0,255,136,0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0,255,136,0);
+    }
+}
+        @media (max-width: 768px) {
+    .timeline-wrapper {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .timeline-wrapper::before {
+        display: none;
+    }
+
+    .timeline-item {
+        padding: 0;
+    }
+}
+
+        body {
             font-family: 'JetBrains Mono', monospace;
             background: var(--darker);
             color: var(--text);
@@ -930,6 +1016,37 @@
         </div>
         </div>
     </section>
+<section id="career-timeline">
+    <div class="container">
+        <div class="timeline-wrapper reveal">
+            
+            <div class="timeline-item">
+                <span class="timeline-year">2019</span>
+                <span class="timeline-dot"></span>
+                <span class="timeline-text">Community & Crypto Content</span>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">2022</span>
+                <span class="timeline-dot"></span>
+                <span class="timeline-text">Operations & DAO VC</span>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">2024</span>
+                <span class="timeline-dot"></span>
+                <span class="timeline-text">Marketing & Growth</span>
+            </div>
+
+            <div class="timeline-item active">
+                <span class="timeline-year">2025</span>
+                <span class="timeline-dot"></span>
+                <span class="timeline-text">BD & Strategic Partnerships</span>
+            </div>
+
+        </div>
+    </div>
+</section>
 
     <section id="experience">
         <div class="container">
@@ -1374,6 +1491,7 @@ window.addEventListener('scroll', () => {
     </script>
 </body>
 </html>
+
 
 
 
