@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Arpit Singh Rajput – Web3 Partnerships & BD</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arpit Singh Rajput | Web3 Partnerships & BD</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-:root {
+:root{
   --primary:#00ff88;
   --secondary:#0066ff;
   --dark:#0a0a0f;
   --darker:#05050a;
-  --card-bg:#141419;
+  --card:#141419;
   --text:#fff;
-  --text-dim:#a0a0b0;
-  --accent-glow:rgba(0,255,136,.15);
+  --dim:#a0a0b0;
+  --glow:rgba(0,255,136,.15);
 }
-
 *{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:'JetBrains Mono',monospace;
@@ -26,46 +25,44 @@ body{
   color:var(--text);
   overflow-x:hidden;
 }
+.container{max-width:1400px;margin:auto;padding:0 2rem}
 
-/* ---------- CRYPTO TICKER ---------- */
+/* ===== TICKER ===== */
 .crypto-ticker{
-  background:rgba(20,20,25,.9);
-  border-bottom:1px solid rgba(0,255,136,.1);
-  padding:.8rem 0;
+  background:#0e0e14;
+  border-bottom:1px solid rgba(0,255,136,.15);
+  padding:.7rem 0;
   overflow:hidden;
 }
 .ticker-wrapper{
   display:flex;
-  animation:scroll 35s linear infinite;
+  animation:scroll 40s linear infinite;
 }
 @keyframes scroll{
   0%{transform:translateX(0)}
   100%{transform:translateX(-50%)}
 }
 .ticker-item{
-  display:flex;
-  gap:.6rem;
   padding:0 2rem;
   font-size:.85rem;
   white-space:nowrap;
 }
 .ticker-symbol{color:var(--primary);font-weight:600}
 
-/* ---------- HEADER ---------- */
+/* ===== HEADER ===== */
 header{
   position:sticky;
   top:0;
   background:rgba(5,5,10,.85);
-  backdrop-filter:blur(20px);
+  backdrop-filter:blur(16px);
   border-bottom:1px solid rgba(0,255,136,.1);
   z-index:100;
 }
-.container{max-width:1400px;margin:auto;padding:0 2rem}
 .header-content{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:1.5rem 0;
+  padding:1.4rem 0;
 }
 .logo{
   font-family:'Syne',sans-serif;
@@ -75,18 +72,29 @@ header{
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
+nav a{
+  color:var(--dim);
+  margin-left:2rem;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-size:.85rem;
+}
+nav a:hover{color:var(--primary)}
 
-/* ---------- HERO ---------- */
-.hero{min-height:90vh;display:flex;align-items:center}
+/* ===== HERO ===== */
+.hero{
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+}
 .hero-content{
   display:flex;
   gap:4rem;
   align-items:center;
 }
-.hero-text{flex:1}
 .hero-tag{
   display:inline-block;
-  padding:.5rem 1.4rem;
+  padding:.5rem 1.5rem;
   border:1px solid var(--primary);
   border-radius:50px;
   color:var(--primary);
@@ -99,23 +107,26 @@ h1{
   font-size:5rem;
   line-height:1.1;
 }
-.gradient-text{
+.gradient{
   background:linear-gradient(135deg,var(--primary),var(--secondary));
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
-.hero-subtitle{
+.hero-sub{
   margin-top:1.5rem;
-  color:var(--text-dim);
-  max-width:600px;
+  color:var(--dim);
+  max-width:620px;
   line-height:1.8;
 }
-.hero-image{position:relative}
-.profile-container{width:350px;height:350px;position:relative}
+.profile-container{
+  width:350px;
+  height:350px;
+  position:relative;
+}
 .profile-glow{
   position:absolute;
   inset:-40px;
-  background:radial-gradient(circle,var(--accent-glow),transparent 70%);
+  background:radial-gradient(circle,var(--glow),transparent 70%);
   animation:pulse 3s infinite;
 }
 @keyframes pulse{
@@ -141,97 +152,243 @@ h1{
   object-position:top;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ===== SECTIONS ===== */
+section{padding:6rem 0}
+.section-header{text-align:center;margin-bottom:4rem}
+.section-tag{
+  color:var(--primary);
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:.8rem;
+}
+h2{
+  font-family:'Syne',sans-serif;
+  font-size:3rem;
+  margin-top:.5rem;
+}
+
+/* ===== CARDS ===== */
+.card{
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.05);
+  border-radius:16px;
+  padding:2.5rem;
+  margin-bottom:2rem;
+}
+.card h3{
+  font-family:'Syne',sans-serif;
+  color:var(--primary);
+  margin-bottom:.5rem;
+}
+.card ul{margin-top:1rem}
+.card li{
+  list-style:none;
+  margin-bottom:.6rem;
+  color:var(--dim);
+}
+
+/* ===== GRID ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:2rem;
+}
+
+/* ===== CONTACT ===== */
+.contact a{
+  display:block;
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.05);
+  border-radius:12px;
+  padding:1.5rem;
+  color:var(--text);
+  text-decoration:none;
+  margin-bottom:1rem;
+}
+.contact a:hover{border-color:var(--primary)}
+
+/* ===== FOOTER ===== */
+footer{
+  border-top:1px solid rgba(255,255,255,.05);
+  padding:3rem 0;
+  text-align:center;
+  color:var(--dim);
+}
+
+/* ===== REVEAL ===== */
+.reveal{opacity:0;transform:translateY(40px);transition:.8s}
+.reveal.active{opacity:1;transform:none}
+
+/* ===== RESPONSIVE ===== */
 @media(max-width:900px){
   .hero-content{flex-direction:column-reverse;text-align:center}
   h1{font-size:3rem}
+  nav{display:none}
 }
 </style>
 </head>
 
 <body>
 
-<!-- LIVE CRYPTO TICKER -->
+<!-- ===== TICKER ===== -->
 <div class="crypto-ticker">
-  <div class="ticker-wrapper" id="cryptoTicker">
-    <div class="ticker-item" data-id="bitcoin"><span class="ticker-symbol">BTC</span><span class="ticker-price">$--</span></div>
-    <div class="ticker-item" data-id="ethereum"><span class="ticker-symbol">ETH</span><span class="ticker-price">$--</span></div>
-    <div class="ticker-item" data-id="solana"><span class="ticker-symbol">SOL</span><span class="ticker-price">$--</span></div>
-    <div class="ticker-item" data-id="avalanche-2"><span class="ticker-symbol">AVAX</span><span class="ticker-price">$--</span></div>
-    <div class="ticker-item" data-id="matic-network"><span class="ticker-symbol">MATIC</span><span class="ticker-price">$--</span></div>
-    <div class="ticker-item" data-id="arbitrum"><span class="ticker-symbol">ARB</span><span class="ticker-price">$--</span></div>
-    <div class="ticker-item" data-id="optimism"><span class="ticker-symbol">OP</span><span class="ticker-price">$--</span></div>
-
-    <!-- duplicated for infinite scroll -->
-    <div class="ticker-item" data-id="bitcoin"><span class="ticker-symbol">BTC</span><span class="ticker-price">$--</span></div>
-    <div class="ticker-item" data-id="ethereum"><span class="ticker-symbol">ETH</span><span class="ticker-price">$--</span></div>
+  <div class="ticker-wrapper" id="ticker">
+    <div class="ticker-item" data-id="bitcoin"><span class="ticker-symbol">BTC</span> $--</div>
+    <div class="ticker-item" data-id="ethereum"><span class="ticker-symbol">ETH</span> $--</div>
+    <div class="ticker-item" data-id="solana"><span class="ticker-symbol">SOL</span> $--</div>
+    <div class="ticker-item" data-id="avalanche-2"><span class="ticker-symbol">AVAX</span> $--</div>
+    <div class="ticker-item" data-id="matic-network"><span class="ticker-symbol">MATIC</span> $--</div>
+    <div class="ticker-item" data-id="arbitrum"><span class="ticker-symbol">ARB</span> $--</div>
+    <div class="ticker-item" data-id="optimism"><span class="ticker-symbol">OP</span> $--</div>
+    <div class="ticker-item" data-id="bitcoin"><span class="ticker-symbol">BTC</span> $--</div>
   </div>
 </div>
 
 <header>
-  <div class="container">
-    <div class="header-content">
-      <div class="logo">ASR</div>
-    </div>
+  <div class="container header-content">
+    <div class="logo">ASR</div>
+    <nav>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
 </header>
 
+<!-- ===== HERO ===== -->
 <section class="hero">
-  <div class="container">
-    <div class="hero-content">
-
-      <div class="hero-text">
-        <div class="hero-tag">Web3 Partnerships & BD</div>
-        <h1>Arpit Singh<br><span class="gradient-text">Rajput</span></h1>
-        <p class="hero-subtitle">
-          Fintech Payments | Web2 ↔ Web3 Integration Specialist<br><br>
-          Driving partnerships, integrations, and ecosystem growth across
-          DeFi, cross-chain infrastructure, and enterprise blockchain adoption.
-        </p>
+  <div class="container hero-content">
+    <div>
+      <div class="hero-tag">Web3 Partnerships & BD</div>
+      <h1>Arpit Singh<br><span class="gradient">Rajput</span></h1>
+      <p class="hero-sub">
+        Fintech Payments | Web2 ↔ Web3 Integration Specialist<br><br>
+        Driving partnerships, integrations, and ecosystem growth across DeFi,
+        cross-chain infrastructure, and enterprise blockchain adoption.
+      </p>
+    </div>
+    <div class="profile-container">
+      <div class="profile-glow"></div>
+      <div class="profile-img">
+        <img src="arpit.jpeg" alt="Arpit Singh Rajput">
       </div>
-
-      <div class="hero-image">
-        <div class="profile-container">
-          <div class="profile-glow"></div>
-          <div class="profile-img">
-            <img src="arpit.jpeg" alt="Arpit Singh Rajput">
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Career</div>
+      <h2>Experience</h2>
+    </div>
+
+    <div class="card reveal">
+      <h3>Kima Network</h3>
+      <strong>Business Development & Community</strong>
+      <ul>
+        <li>Web2 & Web3 partnerships and integrations</li>
+        <li>Cross-chain payment infrastructure growth</li>
+        <li>Enterprise onboarding & GTM strategy</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Expertise</div>
+      <h2>Skills</h2>
+    </div>
+
+    <div class="grid">
+      <div class="card reveal">
+        <h3>Business Development</h3>
+        Client Acquisition · Partnerships · GTM
+      </div>
+      <div class="card reveal">
+        <h3>Blockchain & DeFi</h3>
+        Cross-chain · Payments · DeFi Protocols
+      </div>
+      <div class="card reveal">
+        <h3>Analytics</h3>
+        Token Terminal · Dune · DeFiLlama
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EDUCATION ===== -->
+<section id="education">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Academics</div>
+      <h2>Education</h2>
+    </div>
+
+    <div class="grid">
+      <div class="card reveal">
+        <h3>MCA</h3>
+        Amity University
+      </div>
+      <div class="card reveal">
+        <h3>BCA</h3>
+        GGSIPU
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Connect</div>
+      <h2>Contact</h2>
+    </div>
+
+    <div class="contact">
+      <a href="mailto:arpitkumar9619@gmail.com">arpitkumar9619@gmail.com</a>
+      <a href="https://www.linkedin.com/in/arpit-singh-rajput-a597bb164/" target="_blank">LinkedIn</a>
+      <a href="https://t.me/arpitrajput007" target="_blank">Telegram</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Arpit Singh Rajput — Web3 Partnerships & Business Development
+</footer>
+
 <script>
-/* ---------- COINGECKO LIVE PRICES ---------- */
-async function fetchCryptoPrices(){
+/* ===== REVEAL ===== */
+const reveals=document.querySelectorAll('.reveal');
+window.addEventListener('scroll',()=>{
+  reveals.forEach(el=>{
+    const top=el.getBoundingClientRect().top;
+    if(top<window.innerHeight-120)el.classList.add('active');
+  });
+});
+
+/* ===== COINGECKO ===== */
+async function prices(){
   const ids=[
     'bitcoin','ethereum','solana',
     'avalanche-2','matic-network',
     'arbitrum','optimism'
   ].join(',');
-
-  try{
-    const res=await fetch(
-      `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd`
-    );
-    const data=await res.json();
-
-    document.querySelectorAll('.ticker-item').forEach(item=>{
-      const id=item.dataset.id;
-      const priceEl=item.querySelector('.ticker-price');
-      if(data[id]){
-        priceEl.textContent='$'+data[id].usd.toLocaleString();
-      }
-    });
-  }catch(e){
-    console.error('CoinGecko error',e);
-  }
+  const r=await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd`);
+  const d=await r.json();
+  document.querySelectorAll('.ticker-item').forEach(i=>{
+    const id=i.dataset.id;
+    if(d[id])i.innerHTML=`<span class="ticker-symbol">${i.querySelector('.ticker-symbol').innerText}</span> $${d[id].usd.toLocaleString()}`;
+  });
 }
-
-fetchCryptoPrices();
-setInterval(fetchCryptoPrices,60000);
+prices();
+setInterval(prices,60000);
 </script>
 
 </body>
