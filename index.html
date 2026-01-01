@@ -343,12 +343,18 @@
     height: 100%;
     border-radius: 22px;
     overflow: hidden;
-    border: 2px solid var(--primary);
-    box-shadow: 
+
+    /* ✅ NAVY BLUE BORDER */
+    border: 2px solid #000080;
+
+    /* keep existing glow */
+    box-shadow:
         0 0 0 1px rgba(0,255,136,0.2),
         0 0 40px rgba(0,255,136,0.25);
+
     background: #000;
 }
+
 
 
         @keyframes pulse {
@@ -1491,6 +1497,7 @@ window.addEventListener('scroll', () => {
     </script>
 </body>
 </html>
+
 
 
 
