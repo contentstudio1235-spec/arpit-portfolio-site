@@ -25,21 +25,30 @@
         nav a.active {
     color: var(--primary);
 }
-.key-highlights {
-    margin-top: 1.5rem;
-    color: var(--primary);
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
+        .experience-card:hover,
+.skill-category:hover,
+.education-card:hover {
+    box-shadow: 0 0 30px var(--accent-glow);
+}
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: var(--primary);
+    z-index: 999;
 }
 
-
-        body {
+       body {
             font-family: 'JetBrains Mono', monospace;
             background: var(--darker);
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
         }
+        <div id="scroll-progress"></div>
+
 
         /* Animated Background */
         .bg-grid {
@@ -862,9 +871,6 @@
                     </h1>
                     <p class="hero-subtitle">
                         <strong>Fintech Payments | Web2↔Web3 Integration Specialist</strong><br><br>
-                                    <p class="key-highlights">
-    100+ Partnerships • 2.5M+ Community • 8+ Years Experience
-</p>
                         Strategic partnerships and business development leader bridging traditional finance and blockchain ecosystems. Currently driving Web2 and Web3 client acquisition, partnership integrations, and infrastructure expansion at KIMA Network. Expert in DeFi protocols, cross-chain solutions, and enterprise blockchain adoption with a track record of building 1M+ communities across multiple chains.
                     </p>
         
@@ -1288,11 +1294,15 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Arpit Singh Rajput. All rights reserved. | Web3 Partnerships & Business Development</p>
-        </div>
-    </footer>
+   <footer>
+    <div class="container">
+        <p style="margin-bottom: 1rem; color: var(--primary);">
+            Open to partnerships, consulting, and Web3 BD roles.
+        </p>
+        <p>&copy; 2026 Arpit Singh Rajput. All rights reserved...</p>
+    </div>
+</footer>
+
 
     <script>
         // Create network nodes
@@ -1355,9 +1365,16 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+        window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById('scroll-progress').style.width = progress + '%';
+});
     </script>
 </body>
 </html>
+
 
 
 
