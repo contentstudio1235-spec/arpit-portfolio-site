@@ -425,51 +425,57 @@
             z-index: 1;
         }
 
-        /* Crypto Ticker */
-        .crypto-ticker {
-            background: rgba(20, 20, 25, 0.9);
-            border-bottom: 1px solid rgba(0, 255, 136, 0.1);
-            padding: 0.8rem 0;
-            overflow: hidden;
-            position: relative;
-            z-index: 100;
-        }
+       /* Expertise Marquee */
+.expertise-marquee {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 15, 0.95),
+    rgba(5, 5, 10, 0.95)
+  );
+  overflow: hidden;
+  padding: 1.2rem 0;
+  position: relative;
+  z-index: 90;
+}
 
-        .ticker-wrapper {
-            display: flex;
-            animation: scroll 30s linear infinite;
-        }
+.expertise-track {
+  display: flex;
+  width: max-content;
+  animation: expertise-marquee 40s linear infinite;
+}
 
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
+.expertise-marquee:hover .expertise-track {
+  animation-play-state: paused;
+}
 
-        .ticker-item.badge {
-    padding: 0.6rem 1.4rem;
-    background: rgba(0, 255, 136, 0.1);
-    border: 1px solid var(--primary);
-    border-radius: 999px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    color: var(--primary);
-    text-transform: uppercase;
-        }
+.expertise-track span {
+  margin: 0 3rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  cursor: default;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
 
-        .ticker-symbol {
-            color: var(--primary);
-            font-weight: 600;
-        }
+.expertise-track span:hover {
+  color: var(--primary);
+  text-shadow: 0 0 12px rgba(0, 255, 136, 0.6);
+}
 
-        .ticker-price {
-            color: var(--text);
-        }
-        @media (max-width: 768px) {
-    .experience-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+/* Animation */
+@keyframes expertise-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 
     .duration {
         text-align: left;
@@ -1171,28 +1177,32 @@
 <body>
     <div class="bg-grid"></div>
     <div class="network-visual" id="networkVisual"></div>
+<!-- Expertise Marquee -->
+<div class="expertise-marquee">
+  <div class="expertise-track">
+    <span>DeFi</span>
+    <span>Layer 2</span>
+    <span>Payments</span>
+    <span>Web3</span>
+    <span>Cross-Chain</span>
+    <span>Fintech</span>
+    <span>Infrastructure</span>
+    <span>RWA</span>
+    <span>Interoperability</span>
 
-    <!-- Expertise Ticker -->
-<div class="crypto-ticker">
-    <div class="ticker-wrapper">
-        <div class="ticker-item badge">DeFi</div>
-        <div class="ticker-item badge">Layer 2</div>
-        <div class="ticker-item badge">Payments</div>
-        <div class="ticker-item badge">Web3</div>
-        <div class="ticker-item badge">Cross-Chain</div>
-        <div class="ticker-item badge">Fintech</div>
-        <div class="ticker-item badge">Infrastructure</div>
-
-        <!-- duplicate for seamless infinite scroll -->
-        <div class="ticker-item badge">DeFi</div>
-        <div class="ticker-item badge">Layer 2</div>
-        <div class="ticker-item badge">Payments</div>
-        <div class="ticker-item badge">Web3</div>
-        <div class="ticker-item badge">Cross-Chain</div>
-        <div class="ticker-item badge">Fintech</div>
-        <div class="ticker-item badge">Infrastructure</div>
-    </div>
+    <!-- duplicate for seamless loop -->
+    <span>DeFi</span>
+    <span>Layer 2</span>
+    <span>Payments</span>
+    <span>Web3</span>
+    <span>Cross-Chain</span>
+    <span>Fintech</span>
+    <span>Infrastructure</span>
+    <span>RWA</span>
+    <span>Interoperability</span>
+  </div>
 </div>
+
 
 
     <header>
@@ -1836,6 +1846,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
