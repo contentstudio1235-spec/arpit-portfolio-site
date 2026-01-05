@@ -99,6 +99,10 @@
 .timeline-item.active .timeline-text {
     color: var(--primary);
 }
+        .achievements {
+    margin-top: 1.2rem;
+}
+
 
 @keyframes pulseDot {
     0% {
@@ -1185,9 +1189,21 @@
         <div class="experience-card reveal">
     <div class="experience-header">
         <div class="company-info">
+            <div style="
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--primary), transparent);
+    opacity: 0.25;
+    margin-bottom: 1.2rem;
+"></div>
             <h3 style="margin-bottom: 0.6rem;">
             <h3>Additional Web3 & Freelance Experience</h3>
-            <div class="role">Community, Marketing & Advisory Roles</div>
+            <div class="role" style="margin-bottom: 0.25rem;">
+    Community, Marketing & Advisory Roles
+</div>
+<div class="location" style="color: var(--text-dim); font-size: 0.85rem;">
+    Remote
+</div>
+
             <div class="location">Remote</div>
         </div>
         <div class="duration">
@@ -1527,6 +1543,7 @@ window.addEventListener('scroll', () => {
     </script>
 </body>
 </html>
+
 
 
 
