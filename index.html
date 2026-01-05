@@ -416,53 +416,6 @@
         padding: 12px;
     }
 }
-        .constellation-section {
-    padding: 3rem 0 1rem;
-}
-
-.constellation {
-    position: relative;
-    height: 220px;
-    max-width: 520px;
-    margin: 0 auto;
-}
-
-.node {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: rgba(255,255,255,0.6);
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(255,255,255,0.15);
-}
-
-.node.main {
-    width: 14px;
-    height: 14px;
-    background: #627eea;
-    box-shadow: 0 0 18px rgba(98,126,234,0.6);
-}
-
-/* Node positions */
-.eth { top: 50%; left: 50%; transform: translate(-50%, -50%); }
-.arb { top: 25%; left: 38%; }
-.linea { top: 25%; left: 62%; }
-.scroll { top: 40%; left: 72%; }
-.bnb { top: 70%; left: 40%; }
-.sol { top: 65%; left: 68%; }
-
-/* Links */
-.link {
-    position: absolute;
-    height: 1px;
-    background: rgba(255,255,255,0.15);
-}
-
-.l1 { top: 50%; left: 50%; width: 90px; transform: rotate(-35deg); }
-.l2 { top: 50%; left: 50%; width: 90px; transform: rotate(35deg); }
-.l3 { top: 55%; left: 50%; width: 110px; transform: rotate(140deg); }
-.l4 { top: 55%; left: 50%; width: 120px; transform: rotate(20deg); }
-
 
         .container {
             max-width: 1400px;
@@ -1385,26 +1338,6 @@
         </div>
     </div>
 </section>
-<section class="constellation-section reveal">
-    <div class="container">
-        <div class="constellation">
-            <span class="node eth main"></span>
-
-            <span class="node arb"></span>
-            <span class="node linea"></span>
-            <span class="node scroll"></span>
-
-            <span class="node bnb"></span>
-            <span class="node sol"></span>
-
-            <!-- connections -->
-            <span class="link l1"></span>
-            <span class="link l2"></span>
-            <span class="link l3"></span>
-            <span class="link l4"></span>
-        </div>
-    </div>
-</section>
 
     <section id="experience">
         <div class="container">
@@ -1903,8 +1836,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
-
-
 
 
 
