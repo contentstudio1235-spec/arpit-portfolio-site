@@ -106,61 +106,6 @@
     opacity: 1;
     transform: translateX(-50%) translateY(-4px);
 }
-.top-loop {
-    position: relative;
-    overflow: hidden;
-    height: 42px;
-    background: linear-gradient(
-        180deg,
-        rgba(5,5,10,0.9),
-        rgba(5,5,10,0.6)
-    );
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    z-index: 100;
-}
-
-.loop-track {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    width: max-content;
-    padding-left: 100%;
-    animation: loopScroll 28s linear infinite;
-}
-
-.loop-track span {
-    font-size: 0.75rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.55);
-    position: relative;
-}
-
-/* subtle dot separator */
-.loop-track span::after {
-    content: '•';
-    position: absolute;
-    right: -1.8rem;
-    color: var(--primary);
-    opacity: 0.6;
-}
-
-/* animation */
-@keyframes loopScroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-.top-loop:hover .loop-track {
-    animation-play-state: paused;
-}
-.loop-track span:hover {
-    color: var(--primary);
-    text-shadow: 0 0 8px rgba(0,255,136,0.35);
-}
 
 
         /* Career Timeline Pulse */
@@ -339,27 +284,46 @@
             z-index: 1;
         }
 
-       <div class="top-loop">
-    <div class="loop-track">
-        <span>WEB3</span>
-        <span>CROSS-CHAIN</span>
-        <span>FINTECH</span>
-        <span>INFRASTRUCTURE</span>
-        <span>RWA</span>
-        <span>PAYMENTS</span>
-        <span>DEFI</span>
+        /* Crypto Ticker */
+        .crypto-ticker {
+            background: rgba(20, 20, 25, 0.9);
+            border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+            padding: 0.8rem 0;
+            overflow: hidden;
+            position: relative;
+            z-index: 100;
+        }
 
-        <!-- duplicate for seamless loop -->
-        <span>WEB3</span>
-        <span>CROSS-CHAIN</span>
-        <span>FINTECH</span>
-        <span>INFRASTRUCTURE</span>
-        <span>RWA</span>
-        <span>PAYMENTS</span>
-        <span>DEFI</span>
-    </div>
-</div>
+        .ticker-wrapper {
+            display: flex;
+            animation: scroll 30s linear infinite;
+        }
 
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .ticker-item.badge {
+    padding: 0.6rem 1.4rem;
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid var(--primary);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--primary);
+    text-transform: uppercase;
+        }
+
+        .ticker-symbol {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .ticker-price {
+            color: var(--text);
+        }
         @media (max-width: 768px) {
     .experience-header {
         flex-direction: column;
@@ -1068,6 +1032,27 @@
     <div class="network-visual" id="networkVisual"></div>
 
     <!-- Expertise Ticker -->
+<div class="crypto-ticker">
+    <div class="ticker-wrapper">
+        <div class="ticker-item badge">DeFi</div>
+        <div class="ticker-item badge">Layer 2</div>
+        <div class="ticker-item badge">Payments</div>
+        <div class="ticker-item badge">Web3</div>
+        <div class="ticker-item badge">Cross-Chain</div>
+        <div class="ticker-item badge">Fintech</div>
+        <div class="ticker-item badge">Infrastructure</div>
+
+        <!-- duplicate for seamless infinite scroll -->
+        <div class="ticker-item badge">DeFi</div>
+        <div class="ticker-item badge">Layer 2</div>
+        <div class="ticker-item badge">Payments</div>
+        <div class="ticker-item badge">Web3</div>
+        <div class="ticker-item badge">Cross-Chain</div>
+        <div class="ticker-item badge">Fintech</div>
+        <div class="ticker-item badge">Infrastructure</div>
+    </div>
+</div>
+
 
     <header>
         <div class="container">
@@ -1682,8 +1667,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
-
-
 
 
 
