@@ -81,7 +81,11 @@
     border: 1px solid rgba(0, 255, 136, 0.3);
     box-shadow: 0 0 12px rgba(0, 255, 136, 0.15);
 }
-
+        
+.promotion-badge {
+    position: relative;
+    cursor: default;
+}
 /* Tooltip arrow */
 .promotion-badge::before {
     content: "";
@@ -1640,8 +1644,28 @@ window.addEventListener('scroll', () => {
     document.getElementById('scroll-progress').style.width = progress + '%';
 });
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const badge = document.querySelector(".promotion-badge");
+    if (!badge) return;
+
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting) {
+                badge.classList.add("visible");
+                observer.disconnect();
+            }
+        },
+        { threshold: 0.6 }
+    );
+
+    observer.observe(badge);
+});
+</script>
+
 </body>
 </html>
+
 
 
 
