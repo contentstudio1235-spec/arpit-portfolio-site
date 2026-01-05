@@ -39,10 +39,10 @@
     background: var(--primary);
     z-index: 999;
 }
-        .promotion-role {
-    display: flex;
+       .promotion-role {
+    display: inline-flex; /* 🔑 instead of flex */
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     flex-wrap: wrap;
 }
 
@@ -57,6 +57,52 @@
     letter-spacing: 1px;
     font-weight: 600;
 }
+        .promotion-badge {
+    position: relative;
+    cursor: default;
+}
+
+/* Tooltip */
+.promotion-badge::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 140%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(5, 5, 10, 0.95);
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 0.65rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    box-shadow: 0 0 12px rgba(0, 255, 136, 0.15);
+}
+
+/* Tooltip arrow */
+.promotion-badge::before {
+    content: "";
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(5, 5, 10, 0.95) transparent transparent transparent;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+/* Hover trigger */
+.promotion-badge:hover::after,
+.promotion-badge:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-4px);
+}
+
 
         /* Career Timeline Pulse */
 #career-timeline {
@@ -123,11 +169,14 @@
 }
 .bd-subsection {
     margin-top: 2rem;
-    padding: 1.5rem 1.8rem;
+    padding: 1.4rem 1.6rem;
     background: rgba(255, 255, 255, 0.02);
     border-left: 3px solid var(--primary);
     border-radius: 10px;
+    max-width: 100%;     /* 🔑 */
+    box-sizing: border-box;
 }
+
 
 .bd-heading {
     font-family: 'Syne', sans-serif;
@@ -637,12 +686,12 @@
             opacity: 1;
         }
 
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 1.5rem;
-        }
+       .experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* 🔑 FIX */
+    gap: 1.5rem;
+}
 
         .company-info h3 {
             font-family: 'Syne', sans-serif;
@@ -663,10 +712,15 @@
         }
 
         .duration {
-            text-align: right;
-            color: var(--text-dim);
-            font-size: 0.85rem;
-        }
+    text-align: right;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+
+    /* 🔑 layout stability fixes */
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
 
         .achievements {
             list-style: none;
@@ -1568,6 +1622,7 @@ window.addEventListener('scroll', () => {
     </script>
 </body>
 </html>
+
 
 
 
