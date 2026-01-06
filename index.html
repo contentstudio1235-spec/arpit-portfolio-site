@@ -275,147 +275,6 @@
             50% { transform: translate(-20px, 40px); }
             75% { transform: translate(40px, 20px); }
         }
-.ecosystem-strip {
-    padding: 2.5rem 0;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    background: linear-gradient(
-        180deg,
-        rgba(255,255,255,0.02),
-        rgba(0,0,0,0)
-    );
-}
-
-.ecosystem-content {
-    text-align: center;
-}
-
-.ecosystem-label {
-    display: block;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    margin-bottom: 1.4rem;
-}
-
-.ecosystem-list.logos {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.ecosystem-logo {
-    width: 64px;
-    height: 64px;
-    padding: 14px;
-    border-radius: 14px;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.35s ease;
-}
-
-.ecosystem-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: grayscale(100%) brightness(1.15);
-    opacity: 0.85;
-    transition: all 0.35s ease;
-}
-/* Ethereum */
-.ecosystem-logo.eth:hover {
-    border-color: #627eea;
-    box-shadow: 0 0 18px rgba(98,126,234,0.45);
-}
-
-/* Arbitrum */
-.ecosystem-logo.arb:hover {
-    border-color: #28a0f0;
-    box-shadow: 0 0 18px rgba(40,160,240,0.45);
-}
-
-/* BNB Chain */
-.ecosystem-logo.bnb:hover {
-    border-color: #f3ba2f;
-    box-shadow: 0 0 18px rgba(243,186,47,0.45);
-}
-
-/* Linea */
-.ecosystem-logo.linea:hover {
-    border-color: #9b6bff;
-    box-shadow: 0 0 18px rgba(155,107,255,0.45);
-}
-
-/* Scroll */
-.ecosystem-logo.scroll:hover {
-    border-color: #f5a623;
-    box-shadow: 0 0 18px rgba(245,166,35,0.45);
-}
-
-/* Solana */
-.ecosystem-logo.sol:hover {
-    border-color: #00ffa3;
-    box-shadow: 0 0 18px rgba(0,255,163,0.45);
-}
-
-.ecosystem-logo:hover img {
-    filter: grayscale(0%) brightness(1.4);
-    opacity: 1;
-    transform: translateY(-2px);
-}
-/* Ethereum */
-.ecosystem-logo.eth:hover {
-    border-color: #627eea;
-    box-shadow: 0 0 18px rgba(98,126,234,0.45);
-}
-
-/* Arbitrum */
-.ecosystem-logo.arb:hover {
-    border-color: #28a0f0;
-    box-shadow: 0 0 18px rgba(40,160,240,0.45);
-}
-
-/* BNB Chain */
-.ecosystem-logo.bnb:hover {
-    border-color: #f3ba2f;
-    box-shadow: 0 0 18px rgba(243,186,47,0.45);
-}
-
-/* Linea */
-.ecosystem-logo.linea:hover {
-    border-color: #9b6bff;
-    box-shadow: 0 0 18px rgba(155,107,255,0.45);
-}
-
-/* Scroll */
-.ecosystem-logo.scroll:hover {
-    border-color: #f5a623;
-    box-shadow: 0 0 18px rgba(245,166,35,0.45);
-}
-
-/* Solana */
-.ecosystem-logo.sol:hover {
-    border-color: #00ffa3;
-    box-shadow: 0 0 18px rgba(0,255,163,0.45);
-}
-
-.ecosystem-logo:hover img {
-    filter: grayscale(0%) brightness(1.4);
-    opacity: 1;
-    transform: translateY(-2px);
-}
-@media (max-width: 640px) {
-    .ecosystem-logo {
-        width: 54px;
-        height: 54px;
-        padding: 12px;
-    }
-}
 
         .container {
             max-width: 1400px;
@@ -1318,35 +1177,6 @@
         </div>
     </div>
 </section>
-<section class="ecosystem-strip reveal">
-    <div class="container">
-        <div class="ecosystem-content">
-            <span class="ecosystem-label">Ecosystem Exposure</span>
-
-            <div class="ecosystem-list logos">
-                <div class="ecosystem-logo eth">
-                    <img src="ethereum.svg" alt="Ethereum">
-                </div>
-                <div class="ecosystem-logo arb">
-                    <img src="arbitrum.svg" alt="Arbitrum">
-                </div>
-                <div class="ecosystem-logo bnb">
-                    <img src="bnb.svg" alt="BNB Chain">
-                </div>
-                <div class="ecosystem-logo linea">
-                    <img src="linea.svg" alt="Linea">
-                </div>
-                <div class="ecosystem-logo scroll">
-                    <img src="scroll.svg" alt="Scroll">
-                </div>
-                <div class="ecosystem-logo sol">
-                    <img src="solana.svg" alt="Solana">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
     <section id="experience">
         <div class="container">
             <div class="section-header reveal">
@@ -1844,6 +1674,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
