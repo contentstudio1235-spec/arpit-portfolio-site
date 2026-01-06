@@ -757,10 +757,14 @@
             font-size: 0.85rem;
         }
 
-        .duration {
+     .duration {
     text-align: right;
     color: var(--text-dim);
     font-size: 0.85rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
 
     /* 🔑 layout stability fixes */
     white-space: nowrap;
@@ -1321,19 +1325,22 @@
             <h3>Additional Web3 & Freelance Experience</h3>
             <div class="role">Community, Marketing & Advisory Roles</div>
             <div class="location">Remote</div>
-            <div class="duration">
+        </div>
+
+        <!-- ✅ duration moved OUT -->
+        <div class="duration">
             2018 – Present
         </div>
     </div>
- <ul class="achievements">
+
+    <ul class="achievements">
         <li>Advised early-stage Web3 and crypto projects on community growth, partnerships, and GTM strategy</li>
         <li>Collaborated with multiple DeFi, NFT, and blockchain startups on launches and engagement campaigns</li>
         <li>Provided strategic insights on token launches, ecosystem building, and market positioning</li>
         <li>Actively researched emerging Web3 trends, protocols, and infrastructure developments</li>
     </ul>
 </div>
-</div>
-</div>
+
     <section id="skills">
         <div class="container">
             <div class="section-header reveal">
@@ -1674,6 +1681,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
