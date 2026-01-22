@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: contentstudio1235-spec/arpit-portfolio-site # e.g., arpitsinghrajput/portfolio
+  branch: main # or master
+
+media_folder: "assets/img" # where your photos are stored
+public_folder: "/assets/img"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "index.html"
+        fields:
+          - { label: "Hero Name", name: "hero_name", widget: "string" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text" }
+          - { label: "Kima Experience", name: "kima_desc", widget: "markdown" }
