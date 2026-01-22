@@ -1,9 +1,11 @@
 backend:
   name: github
-  repo: contentstudio1235-spec/arpit-portfolio-site # e.g., arpitsinghrajput/portfolio
-  branch: main # or master
+  repo: contentstudio1235-spec/arpit-portfolio-site
+  branch: main
+  base_url: https://proxy.decapcms.org
+  auth_endpoint: /api/v1/authorize
 
-media_folder: "assets/img" # where your photos are stored
+media_folder: "assets/img"
 public_folder: "/assets/img"
 
 collections:
@@ -15,5 +17,11 @@ collections:
         file: "index.html"
         fields:
           - { label: "Hero Name", name: "hero_name", widget: "string" }
-          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text" }
-          - { label: "Kima Experience", name: "kima_desc", widget: "markdown" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "markdown" }
+          - { label: "Years Experience", name: "stat_years", widget: "string" }
+          - { label: "Community Stats", name: "stat_community", widget: "string" }
+          - { label: "Strategic Partnerships", name: "stat_projects", widget: "string" }
+          - { label: "Kima Network Experience", name: "kima_experience", widget: "markdown" }
+          - { label: "Additional Experience", name: "additional_experience", widget: "markdown" }
+          - { label: "MCA Degree Title", name: "edu_mca", widget: "string" }
+          - { label: "BCA Degree Title", name: "edu_bca", widget: "string" }
