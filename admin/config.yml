@@ -2,8 +2,8 @@ backend:
   name: github
   repo: contentstudio1235-spec/arpit-portfolio-site
   branch: main
-  base_url: https://proxy.decapcms.org
-  auth_endpoint: /api/v1/authorize
+  base_url: ""
+  auth_endpoint: "/api/auth"
 
 local_backend: true
 
