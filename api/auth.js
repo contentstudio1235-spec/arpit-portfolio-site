@@ -1,11 +1,11 @@
 export default async function handler(req, res) {
-    const { host } = req.headers;
-    const protocol = req.headers['x-forwarded-proto'] || 'http';
+  const { host } = req.headers;
+  const protocol = req.headers['x-forwarded-proto'] || 'http';
 
-    // GET: Show the login form
-    if (req.method === 'GET') {
-        res.setHeader('Content-Type', 'text/html');
-        return res.status(200).send(`
+  // GET: Show the login form
+  if (req.method === 'GET') {
+    res.setHeader('Content-Type', 'text/html');
+    return res.status(200).send(`
       <!DOCTYPE html>
       <html>
       <head>
@@ -28,20 +28,20 @@ export default async function handler(req, res) {
       </body>
       </html>
     `);
-    }
+  }
 
-    // POST: Check password and redirect
-    if (req.method === 'POST') {
-        const body = await req.body;
-        // Vercel might parse JSON/URL-encoded automatically or we might need to parse it
-        // For simple form POST:
-        const password = body.password || (typeof body === 'string' ? new URLSearchParams(body).get('password') : null);
+  // POST: Check password and redirect
+  if (req.method === 'POST') {
+    const body = await req.body;
+    // Vercel might parse JSON/URL-encoded automatically or we might need to parse it
+    // For simple form POST:
+    const password = body.password || (typeof body === 'string' ? new URLSearchParams(body).get('password') : null);
 
-        if (password === process.env.CMS_PASSWORD) {
-            // Success: Redirect to callback with a temporary "code" (which we don't really use for security, just flow)
-            return res.redirect(302, `${protocol}://${host}/api/callback?code=authorized`);
-        } else {
-            return res.status(401).send('Invalid password. <a href="/api/auth">Try again</a>');
-        }
+    if (password === process.env.CMS_PASSWORD) {
+      // Success: Redirect to callback with a temporary "code" (which we don't really use for security, just flow)
+      return res.redirect(302, `${protocol}://${host}/api/callback?code=authorized`);
+    } else {
+      return res.status(401).send('Invalid password. <a href="/api/auth">Try again</a>');
     }
+  }
 }
