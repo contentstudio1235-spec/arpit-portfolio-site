@@ -429,23 +429,27 @@
 
         .hero-content {
             display: flex;
-            gap: 4rem;
+            gap: 2rem;
             align-items: center;
             width: 100%;
         }
 
         .hero-text {
-            flex: 1;
+            flex: 3;
         }
 
         .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
             position: relative;
         }
 
         .profile-container {
             position: relative;
-            width: 360px;
-            height: 360px;
+            width: 100%;
+            max-width: 300px;
+            aspect-ratio: 1/1;
             z-index: 2;
         }
 
@@ -1304,7 +1308,8 @@
                         <span class="gradient-text">Rajput</span>
                     </h1>
                     <p class="hero-subtitle" data-cms-hero-subtitle>
-                        <strong> Fintech | Blockchain | Payments | Stablecoins | Web 2 <—> Web3 Integration </strong><br><br>
+                        <strong> Fintech | Blockchain | Payments | Stablecoins | Web 2 <—> Web3 Integration
+                        </strong><br><br>
                         Strategic partnerships and business development leader bridging traditional finance and
                         blockchain ecosystems. Currently driving Web2 and Web3 client acquisition, partnership
                         integrations, and infrastructure expansion at KIMA Network. Expert in DeFi protocols,
@@ -1347,12 +1352,12 @@
                             <span class="status-dot"></span>
                             Open to Work
                         </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
-
             </div>
+        </div>
+
+        </div>
         </div>
     </section>
     <section id="career-timeline">
@@ -1601,24 +1606,6 @@
             </div>
         </section>
 
-        <section id="testimonials">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div class="section-tag">Endorsements</div>
-                    <h2>Trusted By Leaders</h2>
-                </div>
-                <div class="testimonials-slider reveal">
-                    <div class="testimonial-track" id="testimonialTrack">
-                        <!-- Dynamic Testimonials -->
-                    </div>
-                </div>
-                <div class="slider-controls reveal">
-                    <button class="slider-btn prev" onclick="moveSlide(-1)">←</button>
-                    <div class="slider-dots" id="sliderDots"></div>
-                    <button class="slider-btn next" onclick="moveSlide(1)">→</button>
-                </div>
-            </div>
-        </section>
 
         <section id="contact">
             <div class="container">
